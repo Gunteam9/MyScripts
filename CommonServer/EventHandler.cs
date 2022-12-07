@@ -1,5 +1,4 @@
-﻿using BankServer.Crud;
-using CitizenFX.Core;
+﻿using CitizenFX.Core;
 using Common;
 using Common.Entity;
 using System;
@@ -27,8 +26,8 @@ namespace CommonServer
 
             if (playerInfo == null)
             {
-               playerInfo = playerInfoCrud.Insert(new PlayerInfo(0, player.Identifiers["license"]));
-               TriggerEvent(Event.Server.Bank.CreateEmptyPlayerMoney, playerInfo.Id);
+                playerInfo = playerInfoCrud.Insert(new PlayerInfo(0, player.Identifiers["license"]));
+                TriggerEvent(Event.Server.Bank.CreateEmptyPlayerMoney, playerInfo.Id);
             }
         }
     }

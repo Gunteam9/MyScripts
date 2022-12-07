@@ -50,10 +50,6 @@
       <Project>{872FF8CA-2188-48D6-BABA-30CD0AA369B6}</Project>
       <Name>BankCommon</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CommonServer\CommonServer.csproj">
-      <Project>{FE243A6E-D9CC-4928-8DFD-FDE819C5D41C}</Project>
-      <Name>CommonServer</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{FAFB7BB2-7DAB-4723-B810-4122BF3DCF9D}</Project>
       <Name>Common</Name>
@@ -63,25 +59,19 @@
     <Reference Include="CitizenFX.Core.Server">
       <HintPath>..\packages\CitizenFX\CitizenFX.Core.Server.dll</HintPath>
     </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\TMP\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\portable-net45+win8+wp8+wpa81\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Data.SQLite">
-      <HintPath>..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\lib\net451\System.Data.SQLite.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Data.SQLite.EF6">
-      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.114.0\lib\net451\System.Data.SQLite.EF6.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Data.SQLite.Linq">
-      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.116.0\lib\net451\System.Data.SQLite.Linq.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy /y /d "$(TargetPath)" "D:\Games\GTA\txDataCFXDefault_B40395.base\resources\[my]\bank"</PostBuildEvent>
+    <PostBuildEvent>mkdir "%25TMP%25"\gta"
+mkdir "%25TMP%25"\gta\bank"
+xcopy /y /d "$(TargetPath)" "%25TMP%25\gta\bank"</PostBuildEvent>
   </PropertyGroup>
 </Project>

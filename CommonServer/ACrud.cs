@@ -1,23 +1,22 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
-using System.Data.SQLite;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Common.Errors;
 
 namespace CommonServer
 {
     public abstract class ACrud<T> where T : new()
     {
-        private const string serverDataPath = "D:/Games/GTA/txDataCFXDefault_B40395.base";
+        private const string connString = "Server=51.91.98.193;Database=FMSQL;port=3306;User Id=FM_USER;password=FM_PASSWD";
 
-        protected readonly SQLiteConnection connection;
+        protected readonly MySqlConnection connection;
 
         public ACrud()
         {
-            connection = new SQLiteConnection("Data Source=" + Path.Combine(serverDataPath, "main.db"));
+            connection = new MySqlConnection(connString);
         }
 
         /// <summary>

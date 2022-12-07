@@ -1,0 +1,1 @@
+scp -r D:\Games\GTA\txDataCFXDefault_B40395.base\resources\[my] debian@51.91.98.193:test

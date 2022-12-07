@@ -1,5 +1,4 @@
-﻿using BankServer.Crud;
-using CitizenFX.Core;
+﻿using CitizenFX.Core;
 using Common.Entity;
 using System;
 using System.Collections.Generic;

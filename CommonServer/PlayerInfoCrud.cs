@@ -2,14 +2,14 @@
 using Common.Entity;
 using Common.Errors;
 using CommonServer;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
-using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BankServer.Crud
+namespace CommonServer
 {
     public class PlayerInfoCrud : ACrud<PlayerInfo>
     {
@@ -23,7 +23,7 @@ namespace BankServer.Crud
 
                 const string sql = "SELECT * FROM PlayerInfo WHERE id=@id";
 
-                var command = new SQLiteCommand(sql, connection);
+                var command = new MySqlCommand(sql, connection);
                 command.Parameters.AddWithValue("@id", id);
 
                 var reader = command.ExecuteReader();
@@ -32,7 +32,7 @@ namespace BankServer.Crud
                         Convert.ToInt64(reader["Id"]),
                         Convert.ToString(reader["PlayerLicense"]));
             }
-            catch (SQLiteException)
+            catch (MySqlException)
             {
                 return null;
             }
@@ -43,7 +43,7 @@ namespace BankServer.Crud
 
             return res;
         }
-        
+
         public PlayerInfo Get(string license)
         {
             PlayerInfo res = null;
@@ -54,16 +54,16 @@ namespace BankServer.Crud
 
                 const string sql = "SELECT * FROM PlayerInfo WHERE PlayerLicense=@license";
 
-                var command = new SQLiteCommand(sql, connection);
+                var command = new MySqlCommand(sql, connection);
                 command.Parameters.AddWithValue("license", license);
 
                 var reader = command.ExecuteReader();
                 if (reader.Read())
                     res = new PlayerInfo(
-                        Convert.ToInt64(reader["Id"]), 
+                        Convert.ToInt64(reader["Id"]),
                         Convert.ToString(reader["PlayerLicense"]));
             }
-            catch (SQLiteException)
+            catch (MySqlException)
             {
                 return null;
             }
