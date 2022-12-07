@@ -32,10 +32,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CitizenFX.Core.Server">
-      <HintPath>..\..\TestServer\packages\CitizenFX\CitizenFX.Core.Server.dll</HintPath>
+      <HintPath>..\dependencies\CitizenFX.Core.Server.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data">
-      <HintPath>..\..\TMP\MySql.Data.dll</HintPath>
+      <HintPath>..\dependencies\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dependencies\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
