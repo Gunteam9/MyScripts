@@ -54,10 +54,10 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>mkdir "%25TMP%25"\gta"
-mkdir "%25TMP%25"\gta\common"
-mkdir "%25TMP%25"\gta\bank"
-xcopy /y /d "$(TargetPath)" "%25TMP%25\gta\common"
-xcopy /y /d "$(TargetPath)" "%25TMP%25\gta\bank"</PostBuildEvent>
+    <PostBuildEvent>mkdir "%25TMP%25"\[my]"
+mkdir "%25TMP%25"\[my]\common"
+mkdir "%25TMP%25"\[my]\bank"
+xcopy /y /d "$(TargetPath)" "%25TMP%25\[my]\common"
+xcopy /y /d "$(TargetPath)" "%25TMP%25\[my]\bank"</PostBuildEvent>
   </PropertyGroup>
 </Project>
