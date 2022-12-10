@@ -27,6 +27,16 @@ namespace BankCommon.Entity
         public long CompanyId { get; set; }
 
         /// <summary>
+        /// Type d'action (Normal, VAD, ...)
+        /// </summary>
+        public StockType Type { get; set; }
+
+        /// <summary>
+        /// Effet de levier du lot d'action
+        /// </summary>
+        public float Leverage { get; set; }
+
+        /// <summary>
         /// Nombre d'action
         /// </summary>
         public int Amount { get; set; }
@@ -36,11 +46,13 @@ namespace BankCommon.Entity
 
         }
 
-        public Stock(long id, long playerId, long companyId, int amount)
+        public Stock(long id, long playerId, long companyId, StockType type, float leverage, int amount)
         {
             Id = id;
             PlayerId = playerId;
             CompanyId = companyId;
+            Type = type;
+            Leverage = leverage;
             Amount = amount;
         }
     }

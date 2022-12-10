@@ -109,4 +109,17 @@ namespace BankCommon
         /// </summary>
         LifeInsurance = 4
     }
+
+    public enum StockType
+    {
+        /// <summary>
+        /// Achat d'action en mode classique
+        /// </summary>
+        Normal = 0,
+
+        /// <summary>
+        /// Achat d'action en vente à découverte
+        /// </summary>
+        VAD = 1
+    }
 }

@@ -17,6 +17,11 @@ namespace BankCommon.Entity
         public long Id { get; set; }
 
         /// <summary>
+        /// Date de début de la tendance
+        /// </summary>
+        public DateTime Start { get; set; }
+
+        /// <summary>
         /// Durée de la tendance en jour
         /// </summary>
         public int Duration { get; private set; }
@@ -31,7 +36,6 @@ namespace BankCommon.Entity
         /// </summary>
         public Sector Sector { get; private set; }
 
-        private readonly Random random = new Random();
 
         public Trend()
         {
@@ -50,12 +54,17 @@ namespace BankCommon.Entity
         /// Initialise de manière aléatoire les propriétés de la tendance <br />
         /// L'ID n'est pas initialisé
         /// </summary>
-        public void RandomInitialize()
+        public static Trend RandomInitialize()
         {
-            Duration = random.Next(Const.MIN_TREND_DURATION, Const.MAX_TREND_DURATION);
-            Importance = random.Next(Const.MIN_TREND_IMPORTANCE, Const.MAX_TREND_IMPORTANCE);
+            Random random = new Random();
             Array allSectors = Enum.GetValues(typeof(Sector));
-            Sector = (Sector)allSectors.GetValue(random.Next(allSectors.Length));
+
+            return new Trend()
+            {
+                Duration = random.Next(Const.MIN_TREND_DURATION, Const.MAX_TREND_DURATION),
+                Importance = random.Next(Const.MIN_TREND_IMPORTANCE, Const.MAX_TREND_IMPORTANCE),
+                Sector = (Sector)allSectors.GetValue(random.Next(allSectors.Length))
+            };
         }
     }
 }
