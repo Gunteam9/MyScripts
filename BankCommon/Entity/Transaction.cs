@@ -24,7 +24,7 @@ namespace BankCommon.Entity
         /// <summary>
         /// Montant de la transaction
         /// </summary>
-        public int Amount { get; set; }
+        public float Amount { get; set; }
 
         /// <summary>
         /// Date et heure de la transaction
@@ -56,7 +56,7 @@ namespace BankCommon.Entity
 
         }
 
-        public Transaction(long id, TransactionType type, int amount, DateTime date, long source, long target, Account sourceAccount, Account targetAccount)
+        public Transaction(long id, TransactionType type, float amount, DateTime date, long source, long target, Account sourceAccount, Account targetAccount)
         {
             Id = id;
             Type = type;

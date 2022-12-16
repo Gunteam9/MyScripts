@@ -17,19 +17,19 @@ namespace Common.Entity
         public long Id { get; set; }
         
         /// <summary>
-        /// License FiveM du joueur (identifiant)
+        /// Identifiant steam
         /// </summary>
-        public string PlayerLicense { get; set; }
+        public string SteamId { get; set; }
 
         public PlayerInfo()
         {
 
         }
 
-        public PlayerInfo(long id, string playerLicense)
+        public PlayerInfo(long id, string steamId)
         {
             Id = id;
-            PlayerLicense = playerLicense;
+            SteamId = steamId;
         }
     }
 }

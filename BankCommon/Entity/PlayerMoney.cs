@@ -16,17 +16,17 @@ namespace BankCommon.Entity
         /// <summary>
         /// Argent en cash
         /// </summary>
-        public int Cash { get; set; }
+        public float Cash { get; set; }
 
         /// <summary>
         /// Argent sur le compte courant
         /// </summary>
-        public int CurrentAccount { get; set; }
+        public float CurrentAccount { get; set; }
 
         /// <summary>
         /// Épargne sur livret
         /// </summary>
-        public int Savings { get; set; }
+        public float Savings { get; set; }
 
         /// <summary>
         /// Actions
@@ -36,7 +36,7 @@ namespace BankCommon.Entity
         /// <summary>
         /// Épargne en assurance vie
         /// </summary>
-        public int LifeInsurance { get; set; }
+        public float LifeInsurance { get; set; }
 
         public PlayerMoney()
         {

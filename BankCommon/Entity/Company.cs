@@ -34,12 +34,29 @@ namespace BankCommon.Entity
         /// <summary>
         /// Prix à l'ouverture (03h00)
         /// </summary>
-        public int PriceAtOpening { get; set; }
+        public float PriceAtOpening { get; set; }
 
         /// <summary>
         /// Valeur actuel de l'action
         /// </summary>
-        public int CurrentPrice { get; set; }
+        public float CurrentPrice { get; set; }
+
+        /// <summary>
+        /// Volume d'action échangé aujourd'hui (depuis 03h00) <br />
+        /// Ce champ n'est pas stocké en base mais calculé
+        /// </summary>
+        public int Volume { get; set; }
+
+        /// <summary>
+        /// Évolution du prix depuis l'ouverture
+        /// </summary>
+        public float Evolution { get => CurrentPrice - PriceAtOpening; }
+        
+        /// <summary>
+        /// Évolution du prix depuis l'ouverture en pourcentage
+        /// </summary>
+        public float EvolutionAsPercent { get => (CurrentPrice - PriceAtOpening) / PriceAtOpening * 100; }
+
 
         public Company()
         {

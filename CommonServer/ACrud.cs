@@ -8,8 +8,15 @@ using System.Threading.Tasks;
 
 namespace CommonServer
 {
+    /// <summary>
+    /// Crud basique permettant des opérations de base sur la base de données
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public abstract class ACrud<T> where T : new()
     {
+        /// <summary>
+        /// String de connexion à la base de donnée
+        /// </summary>
         private const string connString = "Server=51.91.98.193;Database=FMSQL;port=3306;User Id=FM_USER;password=FM_PASSWD";
 
         protected readonly MySqlConnection connection;

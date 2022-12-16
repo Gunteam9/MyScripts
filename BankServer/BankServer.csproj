@@ -40,7 +40,6 @@
     <Compile Include="Crud\TrendCrud.cs" />
     <Compile Include="Manager\EventHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Manager\StockEchangeManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -49,6 +48,10 @@
     <ProjectReference Include="..\BankCommon\BankCommon.csproj">
       <Project>{872FF8CA-2188-48D6-BABA-30CD0AA369B6}</Project>
       <Name>BankCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CommonServer\CommonServer.csproj">
+      <Project>{4c49436e-10e0-4b58-bc30-0dc8d5a9b3d6}</Project>
+      <Name>CommonServer</Name>
     </ProjectReference>
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{FAFB7BB2-7DAB-4723-B810-4122BF3DCF9D}</Project>

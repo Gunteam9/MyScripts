@@ -68,10 +68,10 @@ namespace Common
             public struct Bank
             {
                 /// <summary>
-                /// Envoi les 10 dernières transactions bancaires du joueur <br />
-                /// Event invoqué en retour de <see cref="Ctos.Bank.GetLast10Transactions"/>
+                /// Envoi les X dernières transactions bancaires du joueur <br />
+                /// Event invoqué en retour de <see cref="Ctos.Bank.GetLastXTransactions"/>
                 /// </summary>
-                public const string GetLast10Transactions = "stoc::bank::GetLast10Transactions";
+                public const string GetLastXTransactions = "stoc::bank::GetLastXTransactions";
 
                 /// <summary>
                 /// Envoi les informations bancaires de l'entreprise <br />
@@ -96,6 +96,11 @@ namespace Common
                 /// Event invoqué en retour de <see cref="Ctos.Bank.GetPlayerMoneyAndCompanies"/>
                 /// </summary>
                 public const string GetPlayerMoneyAndCompanies = "stoc::bank:GetPlayerMoneyAndCompanies";
+
+                /// <summary>
+                /// Envoi les informations bancaire de l'entreprise ainsi que celle du joueur
+                /// </summary>
+                public const string GetCompanyInfoAndPlayerMoney = "stoc::bank::GetCompanyInfoAndPlayerMoney";
             }
         }
 
@@ -107,10 +112,10 @@ namespace Common
             public struct Bank
             {
                 /// <summary>
-                /// Demande la restitution des 10 dernières transactions du joueur <br />
-                /// Invoque en retour l'event <see cref="Stoc.Bank.GetLast10Transactions"/>
+                /// Demande la restitution des X dernières transactions du joueur <br />
+                /// Invoque en retour l'event <see cref="Stoc.Bank.GetLastXTransactions"/>
                 /// </summary>
-                public const string GetLast10Transactions = "ctos::bank::GetLast10Transactions";
+                public const string GetLastXTransactions = "ctos::bank::GetLastXTransactions";
 
                 /// <summary>
                 /// Demande la restitution des informations bancaires de l'entreprise <br />
@@ -135,6 +140,12 @@ namespace Common
                 /// Invoque en retour l'event <see cref="Stoc.Bank.GetPlayerMoneyAndCompanies"/>
                 /// </summary>
                 public const string GetPlayerMoneyAndCompanies = "ctos::bank::GetPlayerMoneyAndCompanies";
+
+                /// <summary>
+                /// Demande la restitution des informations bancaires de l'entreprise ainsi que celle du joueur <br />
+                /// Invoque en retour l'event <see cref="Stoc.Bank.GetCompanyInfoAndPlayerMoney"/>
+                /// </summary>
+                public const string GetCompanyInfoAndPlayerMoney = "ctos::bank::GetCompanyInfoAndPlayerMoney";
 
                 /// <summary>
                 /// Demande au serveur d'effectuer une transaction en cash (entre le joueur et son compte)

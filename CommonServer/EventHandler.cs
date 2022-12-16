@@ -22,13 +22,17 @@ namespace CommonServer
 
             Debug.WriteLine($"Player {player.Name} joining");
 
+            #region Génération du PlayerInfo à la première connexion au serveur
+
             PlayerInfo playerInfo = CommonExtension.Instance.GetPlayerInfo(player);
 
             if (playerInfo == null)
             {
-                playerInfo = playerInfoCrud.Insert(new PlayerInfo(0, player.Identifiers["license"]));
+                playerInfo = playerInfoCrud.Insert(new PlayerInfo(0, player.Identifiers["steam"]));
                 TriggerEvent(Event.Server.Bank.CreateEmptyPlayerMoney, playerInfo.Id);
             }
+
+            #endregion
         }
     }
 }

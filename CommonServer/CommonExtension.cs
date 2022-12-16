@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace CommonServer
 {
+    /// <summary>
+    /// Classe d'extension de type singleton permettant de récupérer des informations facilement (eqls = GiveMe)
+    /// </summary>
     public sealed class CommonExtension
     {
         private static readonly CommonExtension instance = new CommonExtension();
@@ -25,7 +28,7 @@ namespace CommonServer
         /// </summary>
         public PlayerInfo GetPlayerInfo(Player player)
         {
-            return playerInfoCrud.Get(player.Identifiers["License"]);
+            return playerInfoCrud.Get(player.Identifiers["steam"]);
         }
     }
 }

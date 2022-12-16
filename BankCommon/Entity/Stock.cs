@@ -32,28 +32,34 @@ namespace BankCommon.Entity
         public StockType Type { get; set; }
 
         /// <summary>
-        /// Effet de levier du lot d'action
-        /// </summary>
-        public float Leverage { get; set; }
-
-        /// <summary>
         /// Nombre d'action
         /// </summary>
         public int Amount { get; set; }
+
+        /// <summary>
+        /// Nombre d'action simulé avec les effets de levier
+        /// </summary>
+        public int SimulatedAmount { get; set; }
+
+        /// <summary>
+        /// Valeur moyenne des actions à l'achat
+        /// </summary>
+        public float AverageBuyValue { get; set; }
 
         public Stock()
         {
 
         }
 
-        public Stock(long id, long playerId, long companyId, StockType type, float leverage, int amount)
+        public Stock(long id, long playerId, long companyId, StockType type, int amount, int simulatedAmount, float averageBuyValue)
         {
             Id = id;
             PlayerId = playerId;
             CompanyId = companyId;
             Type = type;
-            Leverage = leverage;
             Amount = amount;
+            SimulatedAmount = simulatedAmount;
+            AverageBuyValue = averageBuyValue;
         }
     }
 }
