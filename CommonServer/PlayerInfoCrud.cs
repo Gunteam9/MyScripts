@@ -13,8 +13,6 @@ namespace CommonServer
 {
     public class PlayerInfoCrud : ACrud<PlayerInfo>
     {
-
-
         //public override PlayerInfo Get(long id)
         //{
         //    PlayerInfo res = null;
@@ -168,13 +166,14 @@ namespace CommonServer
         //        connection.Close();
         //    }
         //}
+
         public override PlayerInfo Get(long id)
         {
             throw new NotImplementedException();
         }
 
         /// <summary>
-        /// Renvoi le PlayerInfo correspond au steamId passé en paramètre. Le SteamId est un ID unique
+        /// Renvoi le PlayerInfo correspond au SteamId. Cet élément est unique
         /// </summary>
         public PlayerInfo Get(string steamId)
         {
