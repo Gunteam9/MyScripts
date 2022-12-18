@@ -22,14 +22,24 @@ namespace BankClient.Dto
         public string CompanyName { get; set; }
 
         /// <summary>
+        /// Acronym de l'entreprise
+        /// </summary>
+        public string CompanyAcronym { get; set; }
+
+        /// <summary>
         /// Nombre d'action détenue par le joueur
         /// </summary>
         public int StockAmount { get; set; }
 
         /// <summary>
+        /// Effet de levier
+        /// </summary>
+        public float StockLeverage { get; set; }
+
+        /// <summary>
         /// Valeur d'une action de l'entreprise
         /// </summary>
-        public int CompanyStockValue { get; set; }
+        public float CompanyStockValue { get; set; }
 
         /// <summary>
         /// Évolution du prix de l'action de l'entreprise depuis l'ouverture
@@ -39,7 +49,7 @@ namespace BankClient.Dto
         /// <summary>
         /// Valeur total des actions détenues par le joueur pour l'entreprise
         /// </summary>
-        public int TotalStockValue { get; set; }
+        public float TotalStockValue { get; set; }
 
     }
 }
