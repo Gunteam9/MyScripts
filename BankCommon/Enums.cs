@@ -1,111 +1,104 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BankCommon
+﻿namespace BankCommon
 {
     /// <summary>
-    /// Secteur des entreprises
+    ///     Secteur des entreprises
     /// </summary>
     public enum Sector
     {
         /// <summary>
-        /// Communication
+        ///     Communication
         /// </summary>
         Communication = 0,
 
         /// <summary>
-        /// Service aux consommateurs
+        ///     Service aux consommateurs
         /// </summary>
         Consumer = 1,
 
         /// <summary>
-        /// Energie
+        ///     Energie
         /// </summary>
-        Energy = 2, 
+        Energy = 2,
 
         /// <summary>
-        /// Financier
+        ///     Financier
         /// </summary>
         Financial = 3,
 
         /// <summary>
-        /// Médical
+        ///     Médical
         /// </summary>
         Healthcare = 4,
 
         /// <summary>
-        /// Industrie
+        ///     Industrie
         /// </summary>
         Industrials = 5,
 
         /// <summary>
-        /// Matière première
+        ///     Matière première
         /// </summary>
         Materials = 6,
-        
+
         /// <summary>
-        /// Services
+        ///     Services
         /// </summary>
         Utilities = 7
     }
 
     /// <summary>
-    /// Type de transaction
+    ///     Type de transaction
     /// </summary>
     public enum TransactionType
     {
         /// <summary>
-        /// Dépôt
+        ///     Dépôt
         /// </summary>
         Deposit,
 
         /// <summary>
-        /// Retrait
+        ///     Retrait
         /// </summary>
         Withdrawal,
 
         /// <summary>
-        /// Virement d'argent vers un autre joueur
+        ///     Virement d'argent vers un autre joueur
         /// </summary>
         TransfertToPlayer,
 
         /// <summary>
-        /// Transfert vers un autre compte du même joueur
+        ///     Transfert vers un autre compte du même joueur
         /// </summary>
         Transfert
     }
 
     /// <summary>
-    /// Liste des différents type de compte
+    ///     Liste des différents type de compte
     /// </summary>
     public enum Account
     {
         /// <summary>
-        /// Cash
+        ///     Cash
         /// </summary>
         Cash = 0,
 
         /// <summary>
-        /// Compte courant
+        ///     Compte courant
         /// </summary>
-        CurrentAccount = 1, 
+        CurrentAccount = 1,
 
         /// <summary>
-        /// Épargne sur livret
+        ///     Épargne sur livret
         /// </summary>
         Savings = 2,
 
         /// <summary>
-        /// Actions
+        ///     Actions
         /// </summary>
         Stock = 3,
-        
+
         /// <summary>
-        /// Assurance vie
+        ///     Assurance vie
         /// </summary>
         LifeInsurance = 4
     }
@@ -113,12 +106,12 @@ namespace BankCommon
     public enum StockType
     {
         /// <summary>
-        /// Achat d'action en mode classique
+        ///     Achat d'action en mode classique
         /// </summary>
         Normal = 0,
 
         /// <summary>
-        /// Achat d'action en vente à découverte
+        ///     Achat d'action en vente à découverte
         /// </summary>
         VAD = 1
     }
