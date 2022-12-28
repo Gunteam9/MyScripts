@@ -140,7 +140,7 @@ namespace BankClient
 
             // Touche L
             // Ouvrir le téléphone uniquement
-            if (API.IsControlJustPressed(0, CommonClient.Const.Controls.PRESS_L))
+            if (API.IsControlJustPressed(0, (int)Control.PhoneCameraFocusLock))
             {
                 isPhoneVisible = !isPhoneVisible;
                 Debug.WriteLine($"Is phone visible : {isPhoneVisible}");
@@ -241,8 +241,7 @@ namespace BankClient
                     {
                         dto.StockAmount = stock.Amount;
                         dto.StockLeverage = stock.SimulatedAmount / stock.Amount;
-                        dto.TotalStockValue = 
-                            currentStock.Amount * company.CurrentPrice + (company.CurrentPrice - currentStock.AverageBuyValue) * (currentStock.Amount * (currentStock.SimulatedAmount / currentStock.Amount - 1)) + ;
+                        dto.TotalStockValue = stock.Amount * company.CurrentPrice + (company.CurrentPrice - stock.AverageBuyValue) * (stock.Amount * (stock.SimulatedAmount / stock.Amount - 1));
                     }
                 }
 

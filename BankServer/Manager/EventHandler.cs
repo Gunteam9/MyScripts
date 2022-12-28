@@ -21,6 +21,7 @@ namespace BankServer.Manager
         private readonly CompanyCrud companyCrud = new CompanyCrud();
         private readonly TransactionCrud transactionCrud = new TransactionCrud();
         private readonly MoneyCrud moneyCrud = new MoneyCrud();
+        private readonly CompanyFarmLogCrud companyFarmLogCrud = new CompanyFarmLogCrud();
 
         public IReadOnlyCollection<Company> Companies { get => companies.AsReadOnly(); }
 
@@ -317,7 +318,10 @@ namespace BankServer.Manager
                     var res = transactionCrud.Insert(transaction);
 
                     if (updateSourceRes && res != null)
+                    {
                         player.TriggerEvent(Event.Shared.Common.ShowNotification, $"Transaction de {amountToBuy} actions effectuée");
+                        TriggerEvent(Event.Server.Bank.OnVolumeUpdate, company.Id, amountToBuy);
+                    }
                     else
                         player.TriggerEvent(Event.Shared.Common.ShowNotification, "La transaction n'a pas pu être effectuée");
                 }
@@ -373,6 +377,18 @@ namespace BankServer.Manager
                 else
                     player.TriggerEvent(Event.Shared.Common.ShowNotification, "La transaction a échouée");
             }
+        }
+
+        [EventHandler(Event.Ctos.Bank.FarmHarvest)]
+        public void OnFarmHarvest([FromSource] Player player)
+        {
+            // On se fiche de l'entreprise donc on met un truc par défaut, ici Ambeer (la première de la liste)
+            Company company = companyCrud.GetAllCompanies()[0];
+            CompanyFarmLog farmLog = new CompanyFarmLog(0, company.Id, DateTime.Now, 10);
+            var res = companyFarmLogCrud.Insert(farmLog);
+
+            if (res != null)
+                player.TriggerEvent(Event.Shared.Common.ShowNotification, $"Un item vendu à { company.Name }");
         }
     }
 }

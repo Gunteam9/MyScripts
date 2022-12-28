@@ -19,7 +19,7 @@ namespace BankCommon.Entity
         /// <summary>
         /// Date de début de la tendance
         /// </summary>
-        public DateTime Start { get; set; }
+        public DateTime Start { get; private set; }
 
         /// <summary>
         /// Durée de la tendance en jour
@@ -36,19 +36,33 @@ namespace BankCommon.Entity
         /// </summary>
         public Sector Sector { get; private set; }
 
+        /// <summary>
+        /// Valeur total du modificateur 
+        /// </summary>
+        public float TotalValue { get => Importance * 10; }
+
+        /// <summary>
+        /// Valeur restante du modificateur
+        /// </summary>
+        public float RemainingValue { get; set; }
+
 
         public Trend()
         {
 
         }
 
-        public Trend(long id, int duration, int importance, Sector sector)
+        public Trend(long id, DateTime start, int duration, int importance, Sector sector, float remainingValue)
         {
             Id = id;
+            Start = start;
             Duration = duration;
             Importance = importance;
             Sector = sector;
+            RemainingValue = remainingValue;
         }
+
+
 
         /// <summary>
         /// Initialise de manière aléatoire les propriétés de la tendance <br />
@@ -59,10 +73,16 @@ namespace BankCommon.Entity
             Random random = new Random();
             Array allSectors = Enum.GetValues(typeof(Sector));
 
+            int importance = random.Next(Const.MIN_TREND_IMPORTANCE, Const.MAX_TREND_IMPORTANCE);
+            if (importance == 0) 
+                importance = random.Next(0, 2) == 0 ? -1 : 1;
+
+
             return new Trend()
             {
+                Start = DateTime.Now,
                 Duration = random.Next(Const.MIN_TREND_DURATION, Const.MAX_TREND_DURATION),
-                Importance = random.Next(Const.MIN_TREND_IMPORTANCE, Const.MAX_TREND_IMPORTANCE),
+                Importance = importance,
                 Sector = (Sector)allSectors.GetValue(random.Next(allSectors.Length))
             };
         }

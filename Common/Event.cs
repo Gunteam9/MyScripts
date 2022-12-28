@@ -34,6 +34,19 @@ namespace Common
                 /// </summary>
                 public const string OnClientResourceStart = "onClientResourceStart";
             }
+
+            public struct Common
+            {
+                /// <summary>
+                /// Event permettant de commencer une barre de progression
+                /// </summary>
+                public const string OnProgressBarStart = "client::common::onProgressBarStart";
+
+                /// <summary>
+                /// Event déclenché à la fin du chargement de la barre de progression
+                /// </summary>
+                public const string OnProgressBarEnd = "client::common::onProgressBarEnd";
+            }
         }
 
         /// <summary>
@@ -48,6 +61,9 @@ namespace Common
                 /// </summary>
                 public const string OnPlayerJoining = "playerJoining";
 
+                /// <summary>
+                /// Event déclenché par FiveM lorsque la ressource a terminé son chargement
+                /// </summary>
                 public const string OnResourceStart = "onResourceStart";
             }
 
@@ -57,6 +73,11 @@ namespace Common
                 /// Event à déclencher pour créer les données nécessaires au script de banque
                 /// </summary>
                 public const string CreateEmptyPlayerMoney = "server::bank::CreateEmptyPlayerMoney";
+
+                /// <summary>
+                /// Event à déclencher lors du changement de volume d'action échangé dans une journée
+                /// </summary>
+                public const string OnVolumeUpdate = "server::bank::OnVolumeUpdate";
             }
         }
 
@@ -95,7 +116,7 @@ namespace Common
                 /// Envoi les informations bancaires du joueur ainsi que celles des entreprises
                 /// Event invoqué en retour de <see cref="Ctos.Bank.GetPlayerMoneyAndCompanies"/>
                 /// </summary>
-                public const string GetPlayerMoneyAndCompanies = "stoc::bank:GetPlayerMoneyAndCompanies";
+                public const string GetPlayerMoneyAndCompanies = "stoc::bank::GetPlayerMoneyAndCompanies";
 
                 /// <summary>
                 /// Envoi les informations bancaire de l'entreprise ainsi que celle du joueur
@@ -176,6 +197,12 @@ namespace Common
                 /// Pas d'invocation en retour
                 /// </summary>
                 public const string SellAction = "ctos::bank::SellAction";
+
+                /// <summary>
+                /// Demande au serveur de générer une vente en supérette (Farm entreprise)
+                /// Pas d'invocation en retour
+                /// </summary>
+                public const string FarmHarvest = "ctos::bank::FarmHarvest";
             }
         }
     }

@@ -147,6 +147,11 @@ namespace BankServer.Crud
             throw new NotImplementedException();
         }
 
+        public List<Trend> GetAllTrends()
+        {
+            throw new NotImplementedException();
+        }
+
         public override Trend Insert(Trend objectToSave)
         {
             throw new NotImplementedException();
