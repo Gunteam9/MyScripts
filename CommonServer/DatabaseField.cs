@@ -1,7 +1,7 @@
-﻿namespace BankServer
+﻿namespace CommonServer
 {
 
-    public class CompanyDatabase
+    public static class CompanyDatabase
     {
         public const string TABLE_NAME = "Company";
         public const string ID_FIELD = "Id";
@@ -11,7 +11,7 @@
         public const string CURRENTPRICE_FIELD = "CurrentPrice";
     }
 
-    public class CompanySectorDatabase
+    public static class CompanySectorDatabase
     {
         public const string TABLE_NAME = "CompanySector";
         public const string ID_FIELD = "Id";
@@ -19,7 +19,7 @@
         public const string SECTORID_FIELD = "SectorId";
     }
 
-    public class PlayerMoneyDatabase
+    public static class PlayerMoneyDatabase
     {
         public const string TABLE_NAME = "PlayerMoney";
         public const string ID_FIELD = "Id";
@@ -29,7 +29,7 @@
         public const string LIFEINSURANCE_FIELD = "LifeInsurance";
     }
 
-    public class StockDatabase
+    public static class StockDatabase
     {
         public const string TABLE_NAME = "Stock";
         public const string ID_FIELD = "Id";
@@ -41,7 +41,7 @@
         public const string AVERAGEBYVALUE_FIELD = "AverageByValue";
     }
 
-    public class TransactionDatabase
+    public static class TransactionDatabase
     {
         public const string TABLE_NAME = "Transaction_";
         public const string ID_FIELD = "Id";
@@ -54,7 +54,7 @@
         public const string TARGETACCOUNT_FIELD = "TargetAccount";
     }
 
-    public class TrendDatabase
+    public static class TrendDatabase
     {
         public const string TABLE_NAME = "Trend";
         public const string ID_FIELD = "Id";
@@ -64,7 +64,7 @@
         public const string SECTOR_FIELD = "Sector";
     }
 
-    public class PlayerInfoDatabase
+    public static class PlayerInfoDatabase
     {
         public const string TABLE_NAME = "PlayerInfo";
         public const string ID_FIELD = "Id";

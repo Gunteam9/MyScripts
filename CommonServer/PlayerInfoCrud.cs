@@ -1,5 +1,4 @@
 ﻿using System;
-using BankServer;
 using Common.Entity;
 using Common.Errors;
 using MySql.Data.MySqlClient;
