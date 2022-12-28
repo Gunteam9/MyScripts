@@ -1,12 +1,7 @@
 ﻿using CitizenFX.Core;
+using CitizenFX.Core.Native;
 using Common;
 using Common.Entity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using API = CitizenFX.Core.Native.API;
 
 namespace CommonServer
 {
@@ -24,7 +19,7 @@ namespace CommonServer
 
             #region Génération du PlayerInfo à la première connexion au serveur
 
-            PlayerInfo playerInfo = CommonExtension.Instance.GetPlayerInfo(player);
+            var playerInfo = CommonExtension.Instance.GetPlayerInfo(player);
 
             if (playerInfo == null)
             {
